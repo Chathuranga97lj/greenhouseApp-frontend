@@ -8,14 +8,19 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final bool value = false;
+  
+  get onChanged => null;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Watering App'),
+        title: const Text('Watering App'),
         centerTitle: true,
         backgroundColor: Colors.greenAccent.shade700,
-        leading: Icon(
+        leading: const Icon(
             Icons.menu), // left side component >> items, right side >> actions
       ),
       body: Column(
@@ -35,21 +40,65 @@ class _HomeState extends State<Home> {
                       height: 75,
                       width: 75,
                       color: Colors.blue,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(
+                            Icons.sunny,
+                            color: Colors.black,
+                            size: 40,
+                          ),
+                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                        ],
+                      ),
                     ),
                     Container(
                       height: 75,
                       width: 75,
                       color: Colors.greenAccent,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(
+                            Icons.thermostat,
+                            color: Colors.black,
+                            size: 40,
+                          ),
+                          Text('30c', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                        ],
+                      ),
                     ),
                     Container(
                       height: 75,
                       width: 75,
                       color: Colors.blue,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(
+                            Icons.water_drop_outlined,
+                            color: Colors.black,
+                            size: 40,
+                          ),
+                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                        ],
+                      ),
                     ),
                     Container(
                       height: 75,
                       width: 75,
                       color: Colors.greenAccent,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: const [
+                          Icon(
+                            Icons.wind_power_sharp,
+                            color: Colors.black,
+                            size: 40,
+                          ),
+                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+                        ],
+                      ),
                     ),
                   ],
                 )
@@ -67,6 +116,25 @@ class _HomeState extends State<Home> {
                       child: Container(
                         height: 170,
                         color: Colors.blue,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                const Icon(Icons.sunny, size: 50,),
+                                Switch(value: value,
+                                    onChanged: (bool value) {
+                                      setState(() {
+                                        value = value;
+                                      });
+                                    }
+                                ),
+                              ],
+                            ),
+                            const Text("Lighting", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(width: 10,),
@@ -74,6 +142,25 @@ class _HomeState extends State<Home> {
                         child: Container(
                           height: 170,
                           color: Colors.greenAccent,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  const Icon(Icons.thermostat, size: 50,),
+                                  Switch(value: value,
+                                      onChanged: (bool value) {
+                                        setState(() {
+                                          value = value;
+                                        });
+                                      }
+                                  ),
+                                ],
+                              ),
+                              const Text("Temperature", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
+                            ],
+                          ),
                         )
                     )
                   ],
@@ -92,6 +179,25 @@ class _HomeState extends State<Home> {
                       child: Container(
                         height: 170,
                         color: Colors.greenAccent,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                const Icon(Icons.water_drop_outlined, size: 50,),
+                                Switch(value: value,
+                                    onChanged: (bool value) {
+                                      setState(() {
+                                        value = value;
+                                      });
+                                    }
+                                ),
+                              ],
+                            ),
+                            const Text("Humidity", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(width: 10,),
@@ -99,6 +205,25 @@ class _HomeState extends State<Home> {
                         child: Container(
                           height: 170,
                           color: Colors.blue,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: <Widget>[
+                                  const Icon(Icons.wind_power_rounded, size: 50,),
+                                  Switch(value: value,
+                                      onChanged: (bool value) {
+                                        setState(() {
+                                          value = value;
+                                        });
+                                      }
+                                  ),
+                                ],
+                              ),
+                              const Text("Ventilation", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
+                            ],
+                          ),
                         )
                     )
                   ],
