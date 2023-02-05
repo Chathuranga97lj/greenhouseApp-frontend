@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Components/Action_card.dart';
 import 'Components/Dash_card.dart';
 
 class Home extends StatefulWidget {
@@ -11,6 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final bool value = false;
+  bool isSwitch = false;
   
   get onChanged => null;
 
@@ -18,17 +20,19 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.green,
       appBar: AppBar(
-        title: const Text('Watering App'),
+        title: const Text('WATERING APP'),
         centerTitle: true,
-        backgroundColor: Colors.greenAccent.shade700,
+        backgroundColor: Colors.green.shade500,
+        titleTextStyle: const TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 25),
         leading: const Icon(
-            Icons.menu), // left side component >> items, right side >> actions
+            Icons.menu, color: Colors.black,), // left side component >> items, right side >> actions
       ),
       body: Column(
         children: [
           Padding(
-              padding: EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(10.0),
               child: Image.asset('assets/images/house.jpg')
           ),
           Padding(
@@ -57,52 +61,24 @@ class _HomeState extends State<Home> {
                     Expanded(
                       child: Container(
                         height: 170,
-                        color: Colors.blue,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                const Icon(Icons.sunny, size: 50,),
-                                Switch(value: value,
-                                    onChanged: (bool value) {
-                                      setState(() {
-                                        value = value;
-                                      });
-                                    }
-                                ),
-                              ],
-                            ),
-                            const Text("Lighting", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
-                          ],
+                        // color: Colors.yellowAccent.shade100,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                          color: Colors.yellowAccent,
                         ),
+                        child: Controller(icon: Icons.sunny, data: 'Lighting'),
                       ),
                     ),
                     const SizedBox(width: 10,),
                     Expanded(
                         child: Container(
                           height: 170,
-                          color: Colors.greenAccent,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  const Icon(Icons.thermostat, size: 50,),
-                                  Switch(value: value,
-                                      onChanged: (bool value) {
-                                        setState(() {
-                                          value = value;
-                                        });
-                                      }
-                                  ),
-                                ],
-                              ),
-                              const Text("Temperature", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
-                            ],
+                          //color: Colors.redAccent.shade100,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                            color: Colors.redAccent,
                           ),
+                          child: Controller(icon: Icons.thermostat, data: 'Temperature'),
                         )
                     )
                   ],
@@ -120,52 +96,24 @@ class _HomeState extends State<Home> {
                     Expanded(
                       child: Container(
                         height: 170,
-                        color: Colors.greenAccent,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                const Icon(Icons.water_drop_outlined, size: 50,),
-                                Switch(value: value,
-                                    onChanged: (bool value) {
-                                      setState(() {
-                                        value = value;
-                                      });
-                                    }
-                                ),
-                              ],
-                            ),
-                            const Text("Humidity", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
-                          ],
+                        //color: Colors.blue,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                          color: Colors.blue,
                         ),
+                        child: Controller(icon: Icons.water_drop_outlined, data: 'Humidity'),
                       ),
                     ),
                     const SizedBox(width: 10,),
                     Expanded(
                         child: Container(
                           height: 170,
-                          color: Colors.blue,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: <Widget>[
-                                  const Icon(Icons.wind_power_rounded, size: 50,),
-                                  Switch(value: value,
-                                      onChanged: (bool value) {
-                                        setState(() {
-                                          value = value;
-                                        });
-                                      }
-                                  ),
-                                ],
-                              ),
-                              const Text("Ventilation", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)
-                            ],
+                          //color: Colors.greenAccent,
+                          decoration: const BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(40.0)),
+                            color: Colors.greenAccent,
                           ),
+                          child: Controller(icon: Icons.wind_power_sharp, data: 'Ventilation'),
                         )
                     )
                   ],

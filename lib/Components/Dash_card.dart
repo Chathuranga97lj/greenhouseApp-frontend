@@ -18,7 +18,7 @@ class _DashState extends State<Dash> {
     return Container(
       height: 75,
       width: 75,
-      color: Colors.greenAccent,
+      color: Colors.green,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -27,7 +27,7 @@ class _DashState extends State<Dash> {
             color: Colors.black,
             size: 40,
           ),
-          Text(widget.data, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
+          Text(widget.data, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
         ],
       ),
     );
