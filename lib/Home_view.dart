@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Components/Dash_card.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -36,70 +38,10 @@ class _HomeState extends State<Home> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Container(
-                      height: 75,
-                      width: 75,
-                      color: Colors.blue,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.sunny,
-                            color: Colors.black,
-                            size: 40,
-                          ),
-                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 75,
-                      width: 75,
-                      color: Colors.greenAccent,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.thermostat,
-                            color: Colors.black,
-                            size: 40,
-                          ),
-                          Text('30c', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 75,
-                      width: 75,
-                      color: Colors.blue,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.water_drop_outlined,
-                            color: Colors.black,
-                            size: 40,
-                          ),
-                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
-                        ],
-                      ),
-                    ),
-                    Container(
-                      height: 75,
-                      width: 75,
-                      color: Colors.greenAccent,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: const [
-                          Icon(
-                            Icons.wind_power_sharp,
-                            color: Colors.black,
-                            size: 40,
-                          ),
-                          Text('60%', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),)
-                        ],
-                      ),
-                    ),
+                    Dash(icon: Icons.sunny, data: '60%'),
+                    Dash(icon: Icons.thermostat, data: '30c'),
+                    Dash(icon: Icons.water_drop_outlined, data: '60%'),
+                    Dash(icon: Icons.wind_power_sharp, data: '60%'),
                   ],
                 )
               ],
